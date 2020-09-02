@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Test from './Test'
 import './App.css';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       isActive: false,
     },
   ])
+
   const [ value, setValue ] = useState('')
 
   const handleChange = (e) => {
@@ -54,6 +56,7 @@ const App = () => {
           </tbody>
         </table>
       </div>
+      <Test />
     </div>
   )
 }
