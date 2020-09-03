@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import Test from './Test'
+import Parent from './Parent'
+// import User from './User'
+import UserReducer from "./UserReducer";
 import './App.css';
 
 const App = () => {
@@ -56,7 +58,9 @@ const App = () => {
           </tbody>
         </table>
       </div>
-      <Test />
+      <Parent />
+      {/*<User />*/}
+      <UserReducer />
     </div>
   )
 }

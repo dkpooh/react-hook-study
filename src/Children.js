@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTestContext, usePostContext } from "./Test";
+import { useParentContext, usePostContext } from "./Parent";
 
 const Children = () => {
-  const user = useTestContext()
+  const user = useParentContext()
   const post = usePostContext()
   return (
     <>
