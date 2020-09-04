@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, {useCallback, useState} from 'react'
 import Parent from './Parent'
 // import User from './User'
-import UserReducer from "./UserReducer";
+import UserReducer from './UserReducer'
+import Average from './Average'
+import AverageMemo from './AverageMemo'
 import './App.css';
 
 const App = () => {
@@ -30,15 +32,25 @@ const App = () => {
     console.log(value)
   }
 
-  const handleClick = (idx) => {
+  // const handleClick = (idx) => {
+  //   setItems(
+  //     items.map((ele, key) => (
+  //       {
+  //         ...ele,
+  //         isActive: idx === key ? !ele.isActive : ele.isActive
+  //       }
+  //   )))
+  // }
+
+  const handleClick = useCallback((idx) => {
     setItems(
       items.map((ele, key) => (
         {
           ...ele,
           isActive: idx === key ? !ele.isActive : ele.isActive
         }
-    )))
-  }
+      )))
+  }, [items])
 
   return (
     <div className="App">
@@ -61,6 +73,8 @@ const App = () => {
       <Parent />
       {/*<User />*/}
       <UserReducer />
+      {/*<Average />*/}
+      <AverageMemo />
     </div>
   )
 }
